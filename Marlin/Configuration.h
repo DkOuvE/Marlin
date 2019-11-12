@@ -511,9 +511,9 @@
   //#define DEFAULT_Kd 440
 
   // Anycubic Kossel - run 'M106 S255' & 'M303 E0 C10 S200'
-  #define DEFAULT_Kp 14.79
-  #define DEFAULT_Ki 0.82
-  #define DEFAULT_Kd 66.31
+  #define DEFAULT_Kp 49.05
+  #define DEFAULT_Ki 6.99
+  #define DEFAULT_Kd 86.11
 
 #endif // PIDTEMP
 

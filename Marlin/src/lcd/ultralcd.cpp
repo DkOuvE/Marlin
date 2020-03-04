@@ -103,7 +103,7 @@ MarlinUI ui;
   #include "../feature/bedlevel/bedlevel.h"
 #endif
 
-#if HAS_TRINAMIC
+#if HAS_TRINAMIC_CONFIG
   #include "../feature/tmc_util.h"
 #endif
 
@@ -1245,7 +1245,7 @@ void MarlinUI::update() {
         }
       #endif
 
-      #if HAS_SHIFT_ENCODER      
+      #if HAS_SHIFT_ENCODER
         /**
          * Set up Rotary Encoder bit values (for two pin encoders to indicate movement).
          * These values are independent of which pins are used for EN_A / EN_B indications.

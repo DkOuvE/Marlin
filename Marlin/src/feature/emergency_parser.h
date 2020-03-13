@@ -78,7 +78,7 @@ public:
     switch (state) {
       case EP_RESET:
         switch (c) {
-          case ' ': break;
+          case ' ': case '\n': case '\r': break;
           case 'N': state = EP_N;      break;
           case 'M': state = EP_M;      break;
           default: state  = EP_IGNORE;
@@ -164,11 +164,11 @@ public:
       #endif
 
       case EP_IGNORE:
-        if (c == '\n') state = EP_RESET;
+        if (c == '\n' || c == '\r') state = EP_RESET;
         break;
 
       default:
-        if (c == '\n') {
+        if (c == '\n' || c == '\r') {
           if (enabled) switch (state) {
             case EP_M108: wait_for_user = wait_for_heatup = false; break;
             case EP_M112: killed_by_M112 = true; break;
